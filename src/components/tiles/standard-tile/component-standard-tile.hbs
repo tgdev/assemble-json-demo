@@ -1,14 +1,14 @@
 <div class="tile standard">
-    {{#compare data.imgUrl '||' imgUrl}}
+    {{#hasData data.imgUrl imgUrl}}
       <img src="{{#if data}}{{{ data.imgUrl }}}{{else}}{{{imgUrl}}}{{/if}}" alt="">
-    {{/compare}}
+    {{/hasData}}
     <div class="content">
         <h4>{{#if data}}{{ data.title }}{{else}}{{title}}{{/if}}</h4>
-        {{#compare data.blurb '||' blurb}}
+        {{#hasData data.blurb blurb}}
         <p>{{#if data}}{{ data.blurb }}{{else}}{{blurb}}{{/if}}</p>
-        {{/compare}}
-        {{#compare data.btnText '||' btnText}}
+        {{/hasData}}
+        {{#hasData data.btnText btnText}}
         <a href="#" class="btn">{{#if data}}{{ data.btnText }}{{else}}{{btnText}}{{/if}}</a>
-        {{/compare}}
+        {{/hasData}}
     </div>
 </div>
