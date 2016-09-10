@@ -1,0 +1,23 @@
+.latest-news {
+  h2,
+  h4 {
+    color: $color-primary;
+  }
+
+  .list-item {
+    border-bottom: 1px solid $color-grey-3;
+    padding: 20px 0;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    a {
+      text-transform: uppercase;
+    }
+  }
+
+  .btn {
+    margin-top: 40px;
+  }
+}

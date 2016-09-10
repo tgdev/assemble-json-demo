@@ -1,0 +1,66 @@
+/*
+*
+* GRID TEST DEMO CSS
+*
+*/
+
+.example-css {
+  .row {
+    margin-bottom: 60px;
+  }
+
+  .image {
+    @include col-m(12);
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .copy {
+    @include col-m(12);
+  }
+}
+
+.example-html {
+  .image {
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .example-css {
+    .image {
+      @include col-t(4);
+    }
+
+    .copy {
+      @include col-t(8);
+    }
+  }
+}
+
+@media (min-width: $screen-md) {
+  .example-css {
+    .image {
+      @include col-dt(2);
+      @include col-dt-offset(3);
+    }
+
+    .copy {
+      @include col-dt(6);
+    }
+
+    &.reverse {
+      .image {
+        @include col-dt(2);
+        @include col-dt-offset(4, true);
+      }
+    }
+  }
+}

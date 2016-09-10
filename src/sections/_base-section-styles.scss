@@ -1,0 +1,101 @@
+// GLOBAL COMPONENT STYLES
+//----------------------------------------
+// All sectionss should have consistent padding and borders
+@mixin base-section-padding {
+  padding: $screen-padding*2 $base-section-mobile-padding;
+
+  @media (min-width: $screen-sm) {
+    padding: $screen-padding*2;
+  }
+
+  @media (min-width: $screen-md) {
+    padding: ($base-section-mobile-padding * 3) $base-section-desktop-padding;
+  }
+}
+
+.section {
+  @include base-section-padding;
+  border-bottom: 1px solid $color-grey-3;
+}
+
+@mixin base-non-section-padding {
+  padding: $base-section-mobile-padding;
+
+  @media (min-width: $screen-sm) {
+    padding: $base-section-tablet-padding;
+  }
+
+  @media (min-width: $screen-md) {
+    padding: $base-section-desktop-padding;
+  }
+}
+
+// COMPONENT PADDING EXTENSIONS
+//----------------------------------------
+%no-padding,
+.no-padding {
+  padding: 0;
+}
+
+%no-side-padding,
+.no-side-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+%no-padding-left,
+.no-padding-left {
+  padding-left: 0;
+}
+
+%no-padding-right,
+.no-padding-right {
+  padding-right: 0;
+}
+
+%no-top-padding,
+.no-top-padding {
+  padding-top: 0;
+}
+
+%no-bottom-padding,
+.no-bottom-padding {
+  padding-bottom: 0;
+}
+
+%no-top-bottom-padding,
+.no-top-bottom-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-md) {
+  %no-extra-padding,
+  .no-extra-padding {
+    padding: ($base-section-mobile-padding * 2) $base-section-tablet-padding;
+  }
+
+  %no-extra-padding-left,
+  .no-extra-padding-left {
+    padding-left: $base-section-tablet-padding;
+  }
+
+  %no-extra-padding-right,
+  .no-extra-padding-right {
+    padding-right: $base-section-tablet-padding;
+  }
+}
+
+.section {
+  .section-heading {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .section-readmore {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

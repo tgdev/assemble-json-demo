@@ -1,0 +1,30 @@
+.half-half {
+  .left-col,
+  .right-col {
+    @include col-m(12);
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .half-half {
+    .left-col {
+      @include col-t(6);
+    }
+
+    .right-col {
+      @include col-t(6);
+    }
+  }
+}
+
+@media (min-width: $screen-md) {
+  .half-half {
+    .left-col {
+      @include col-dt(6);
+    }
+
+    .right-col {
+      @include col-dt(6);
+    }
+  }
+}

@@ -1,0 +1,139 @@
+// GlOBAL FORM STYLES
+//----------------------------------------
+$input-height: 40px;
+$checkbox-size: 30px;
+$radio-size: 30px;
+$captcha-margin: 30px;
+
+label {
+  display: inline-block;
+  margin-bottom: $input-height / 2;
+  color: $color-grey-1;
+  @include font-size(16);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  @include font-size(14);
+  line-height: $input-height;
+  height: $input-height;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 2px;
+  border: 1px solid $color-grey-3;
+  transition: border-color 0.3s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $color-primary;
+  }
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+  padding: 15px;
+  @include line-height(17);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  background-color: $color-white;
+  height: $input-height;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  & + label {
+    padding-left: $checkbox-size + 15px;
+    height: $checkbox-size;
+    display: block;
+    line-height: $checkbox-size;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  &:last-of-type + label {
+    margin-bottom: 0;
+  }
+
+  // Hide default checkbox/radio
+  &:not(:checked),
+  &:checked {
+    position: absolute;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    z-index: 10;
+    margin: 0;
+    opacity: 0;
+  }
+
+  // Default checkbox/radio
+  &:not(:checked) + label::before,
+  &:checked + label::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    border: 1px solid $color-grey-3;
+    border-radius: 2px;
+    transition:
+      border-color 0.2s ease-in-out,
+      background-color 0.2s ease-in-out;
+  }
+
+  // Checked checkbox/radio
+  &:checked + label::before {
+    border: 1px solid $color-primary;
+    background-color: $color-primary;
+  }
+}
+
+input[type="checkbox"] {
+  &:not(:checked) + label::before,
+  &:checked + label::before {
+    width: $checkbox-size;
+    height: $checkbox-size;
+  }
+
+  // Icon
+  &:checked + label {
+    @include bgIcon(tick, after) {
+      position: absolute;
+      left: 7px;
+      width: $checkbox-size;
+      height: $checkbox-size;
+      @include font-size(14);
+      color: $color-white;
+    }
+  }
+}
+
+input[type="radio"] {
+  position: relative;
+
+  &:not(:checked) + label::before,
+  &:checked + label::before {
+    width: $radio-size;
+    height: $radio-size;
+    border-radius: 50%;
+  }
+
+  // Icon
+  &:checked + label::after {
+    content: "";
+    left: 10px;
+    top: 10px;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $color-white;
+  }
+}

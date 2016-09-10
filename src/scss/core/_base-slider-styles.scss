@@ -1,0 +1,138 @@
+// Slick Carousel overrides
+//----------------------------------------
+.slider-wrapper {
+  position: relative;
+
+  &.slick-slider {
+    padding: 71px 0 0; //slick-dots height plus margin
+  }
+
+  .slick-slide {
+    padding: 0;
+  }
+
+  // Pagination
+  ul.slick-dots {
+    margin: 30px 0 0;
+    width: 100%;
+    line-height: 10px;
+    text-align: center;
+    top: 0;
+    bottom: auto;
+    position: absolute;
+
+    li {
+      height: 10px;
+      width: 10px;
+      padding: 0;
+      margin: 0 0 0 5px;
+      position: relative;
+      display: inline-block;
+    }
+
+    //list icon reset
+    li::before {
+      display: none;
+    }
+
+    li button {
+      border: none;
+      background: 0 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      outline: 0;
+      line-height: 0;
+      font-size: 0;
+      color: transparent;
+      cursor: pointer;
+    }
+
+    li button::before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 100%;
+      border: 2px solid $color-light-grey-2;
+      margin: 0 auto;
+    }
+
+    li.slick-active button::before {
+      border-color: $color-primary;
+    }
+  }
+
+  // Left/Right arrows
+  .slick-prev,
+  .slick-next {
+    display: none;
+    width: 0;
+    height: 0;
+    color: $color-primary;
+    position: absolute;
+    top: 50%;
+    margin-top: 2%;
+    outline: none;
+
+    //button reset
+    border: none;
+    background-color: transparent;
+    font-size: 0;
+    padding: 0;
+
+    &::before {
+      opacity: 1;
+      @include font-size(48);
+    }
+
+    &.slick-disabled {
+      opacity: 0.5;
+    }
+  }
+
+  .slick-prev {
+    left: -17px;
+
+    &::before {
+      content: '<';
+      // @extend %icon-arrow-left;
+    }
+  }
+
+  .slick-next {
+    right: -17px;
+
+    &::before {
+      content: '>';
+      // @extend %icon-arrow-right;
+    }
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .slick-carousel-wrapper {
+    &.slick-slider {
+      padding-top: 30px;
+    }
+
+    ul.slick-dots {
+      margin: 0;
+      text-align: right;
+      right: 0;
+      top: -16px;
+    }
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .slick-carousel-wrapper {
+    .slick-prev,
+    .slick-next {
+      width: auto;
+      height: auto;
+    }
+  }
+}
+

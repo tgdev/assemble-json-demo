@@ -1,0 +1,110 @@
+// SVG Icons
+//----------------------------------------
+
+$bgIconPath: './src/icons/optimised/';
+
+// Mixins for adding icons to elements using CSS backgrounds
+
+// set background to svg file
+@mixin iconStyles($i) {
+  background: transparent center no-repeat;
+  background-image: svg-url(inline-image('#{$bgIconPath}#{$i}.svg'));
+  background-size: cover;
+}
+
+// eg: @include bgIcon(tick);
+// eg: @include bgIcon(arrow-d, after);
+@mixin bgIcon($icon, $position: '') {
+  @if $position != '' {
+    &::#{$position} {
+      @content;
+      @include iconStyles($icon);
+      pointer-events: none;
+    }
+  }
+
+  @else {
+    @content;
+    @include iconStyles($icon);
+  }
+}
+
+svg {
+  will-change: transform;
+  transition: all 200ms ease-in;
+
+  &:not(:root) {
+    overflow: hidden;
+  }
+
+  * {
+    fill: currentColor;
+  }
+}
+
+// Base class
+.icon {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+// Arrow icons
+
+// .icon-arrow-u { }
+// .icon-arrow-d { }
+// .icon-arrow-l { }
+// .icon-arrow-r { }
+.icon-arrow-l--large,
+.icon-arrow-r--large {
+  width: 40px;
+  height: 40px;
+}
+// .icon-arrow-l--large { }
+// .icon-arrow-r--large { }
+
+
+// Utility icons
+.icon-menu {
+  padding: 8px 10px;
+  padding-right: 0;
+  cursor: pointer;
+}
+
+.icon-search {
+  top: 3px;
+}
+// .icon-print { }
+// .icon-close { }
+// .icon-add { }
+// .icon-tick { }
+
+// Social icons
+// .icon-social {}
+
+.icon--facebook {
+  color: $facebook-blue;
+}
+
+.icon--google {
+  color: $google-red;
+}
+
+.icon--linkedin {
+  color: $linkedin-blue;
+}
+
+.icon--twitter {
+  color: $twitter-blue;
+}
+
+.icon--youtube {
+  color: $youtube-red;
+}
+
+@media (min-width: $screen-sm) {
+  .icon-menu {
+    display: none;
+  }
+}

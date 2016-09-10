@@ -1,0 +1,43 @@
+$button-height: 40px;
+
+.btn {
+  position: relative;
+  display: inline-block;
+  height: $button-height;
+  min-width: 155px;
+  padding: 0 25px;
+  border: 1px solid $color-primary;
+  border-radius: none;
+  font-family: $font-open;
+  @include font-size(14);
+  line-height: -2 + $button-height;
+  font-weight: 400;
+  color: $color-primary;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: all 0.1s ease-in-out;
+
+  &:not(.btn-disabled):hover,
+  &.on {
+    background: $color-primary;
+    color: $color-white;
+    text-decoration: none;
+
+    span {
+      transition: all 0.1s ease-in-out;
+      color: $color-white;
+    }
+  }
+
+  &.btn-white {
+    border-color: $color-white;
+    color: $color-white;
+
+    &:not(.btn-disabled):hover {
+      background: $color-white;
+      color: $color-primary;
+    }
+  }
+}
+

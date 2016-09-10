@@ -1,0 +1,11 @@
+<section class="section tile-holder {{theme}}">
+	<div class="container-fluid">
+        <h2>{{ heading }}</h2>
+        <div class="row tile-wrapper">
+            {{#each tileItem }}
+				{{ renderInnerPartial ../component data=this }}
+            {{/each}}
+        </div>
+	</div>
+</section>
+

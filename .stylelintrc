@@ -1,0 +1,23 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "at-rule-empty-line-before": [ "always", {
+            except: [
+                "all-nested",
+                "blockless-after-same-name-blockless",
+                "first-nested"
+            ],
+            ignore: [
+                "after-comment",
+                all-nested
+            ]
+        }],
+        "color-no-hex": true,
+        "declaration-empty-line-before": "never",
+        "declaration-property-value-blacklist": {
+            "/^border/": ["0"]
+        },
+        "max-empty-lines": 2,
+        "max-nesting-depth": 4
+    }
+}

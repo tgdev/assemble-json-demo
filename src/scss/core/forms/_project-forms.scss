@@ -1,0 +1,31 @@
+// Project Specific Form styles
+// For when you don't care about Kentico forms
+//----------------------------------------
+
+.control-group {
+  position: relative;
+  margin-bottom: $input-height / 2;
+
+  .select-wrapper {
+    position: relative;
+    @include bgIcon(arrow-d, after) {
+      position: absolute;
+      top: 15px;
+      right: 12px;
+      width: 20px;
+      height: 12px;
+      content: "";
+      @include line-height(40);
+      text-align: center;
+      color: $color-primary;
+    }
+  }
+
+  // Error
+  &.error input,
+  &.error textarea,
+  &.error input:not(:checked) + label::before {
+    border-color: $color-secondary-4;
+  }
+}
+

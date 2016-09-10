@@ -1,0 +1,8 @@
+<div class="tile standard">
+    <img src="{{#if data}}{{{ data.imgUrl }}}{{else}}{{{imgUrl}}}{{/if}}" alt="">
+    <div class="content">
+        <h4>{{#if data}}{{ data.title }}{{else}}{{title}}{{/if}}</h4>
+        <p>{{#if data}}{{ data.blurb }}{{else}}{{blurb}}{{/if}}</p>
+        <a href="#" class="btn">{{#if data}}{{ data.btnText }}{{else}}{{btnText}}{{/if}}</a>
+    </div>
+</div>

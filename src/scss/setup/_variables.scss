@@ -1,0 +1,91 @@
+// Bootstrap Grid Variables
+// Available globally for media queries
+//----------------------------------------
+$screen-xxs:                               0;
+$screen-xs:                                480px;
+$screen-sm:                                768px;
+$screen-md:                                1024px;
+$screen-lg:                                1220px;
+$screen-xlg:                               1600px;
+
+$screen-xxs-max:                           ($screen-xs - 1);
+$screen-xs-max:                            ($screen-sm - 1);
+$screen-sm-max:                            ($screen-md - 1);
+$screen-md-max:                            ($screen-lg - 1);
+$screen-lg-max:                            ($screen-xlg - 1);
+
+$screen-padding:                           20px;
+
+
+// Base Font / Font Size / Line Heights
+//----------------------------------------
+$base-font-family:                         $font-open;
+$base-heading-font:                        $font-open;
+
+$baseline:                                 10;
+$base-font-size:                           16;
+$base-line-height:                         24;
+
+//Font Sizes
+$h1-font-size:                             68;
+$h2-font-size:                             42;
+$h3-font-size:                             26;
+$h4-font-size:                             16;
+
+//Line Heights
+$h1-lh:                                    72;
+$h2-lh:                                    48;
+$h3-lh:                                    48;
+$h4-lh:                                    24;
+
+$base-margin-bottom:                       24px;
+
+
+// COLORS
+//----------------------------------------
+/* stylelint-disable color-no-hex */
+$color-primary:                            #4a90e2;
+$color-secondary-1:                        #b8e986;
+$color-secondary-2:                        #7ed321;
+$color-secondary-3:                        #417505;
+$color-secondary-4:                        #0b12f7;
+$color-black:                              #222;
+$color-grey-1:                             #f1f1f1;
+$color-grey-2:                             #e0e0e0;
+$color-grey-3:                             #757575;
+$color-light-grey-1:                       #ebebeb;
+$color-light-grey-2:                       #f6f6f6;
+$color-white:                              #fff;
+
+$base-bg-color:                            $color-white;
+
+$facebook-blue:                            #3b5998;
+$google-red:                               #dc4e41;
+$linkedin-blue:                            #0077b5;
+$twitter-blue:                             #55acee;
+$youtube-red:                              #cd201f;
+
+
+// Spacing Units
+//----------------------------------------
+// $m-spacing-sm: 20px;
+// $m-spacing: 40px;
+// $m-spacing-lg: 60px;
+//
+// $dt-spacing-sm: 30px;
+// $dt-spacing: 60px;
+// $dt-spacing-lg: 100px;
+
+// Components
+//----------------------------------------
+$base-section-mobile-padding:              20px;
+$base-section-mobile-padding-half:         $base-section-mobile-padding / 2;
+$base-section-mobile-padding-double:       $base-section-mobile-padding * 2;
+
+$base-section-tablet-padding:              20px;
+$base-section-tablet-padding-half:         $base-section-tablet-padding / 2;
+$base-section-tablet-padding-double:       $base-section-tablet-padding * 2;
+
+$base-section-desktop-padding:             30px;
+$base-section-desktop-padding-half:        $base-section-desktop-padding / 2;
+$base-section-desktop-padding-double:      $base-section-desktop-padding * 2;

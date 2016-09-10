@@ -1,0 +1,32 @@
+.kentico-form-builder {
+  #ui-datepicker-div {
+    margin-bottom: 60px;
+  }
+}
+
+// CUSTOM WEB FORM Layouts
+// Default is single column, optional two column included as an example.
+//----------------------------------------
+@media (min-width: $screen-sm) {
+  .kentico-form-builder.form-builder-two-col {
+    .EditingFormTable {
+      tr {
+        float: left;
+        width: 50%;
+      }
+
+      tr:nth-of-type(odd) {
+        padding-right: 15px;
+      }
+
+      tr:nth-of-type(even) {
+        padding-left: 15px;
+      }
+
+      tr:last-of-type {
+        width: 100%;
+      }
+    }
+  }
+}
+

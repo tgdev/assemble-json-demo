@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>{{projectName}} | FED Build</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300|Open+Sans:400,700);
+
+        * { box-sizing: border-box; }
+        html { font-size: 62.5%; }
+
+    	body {
+    		font-family: 'Open Sans', sans-serif;
+    		margin: 0;
+            background-color: #f7f7f7;
+            font-size: 1.6rem;
+    	}
+
+        .container { padding: 0 20px; }
+        h2 { font-weight: 700; }
+
+        p {
+            font-size: 1.2rem;
+            color: #818181;
+            text-align: center;
+            margin: 0;
+        }
+
+    	ul {
+            display: block;
+            width: 100%;
+            margin: 0 auto 20px 0;
+            padding: 0;
+    		list-style: none;
+    	}
+
+        a {
+            color: #F9792F;
+            text-decoration: none;
+        }
+
+        .page-link {
+            display: block;
+            padding: 20px 0;
+            border-bottom: 1px solid #e3dad4;
+        }
+
+        a > div { transition: transform .2s ease-in-out; }
+        a:hover div { transform: translateX(5px); }
+
+        .page-name {
+            font-weight: 400;
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .page-url {
+            font-size: 1.3rem;
+            color: #818181;
+            word-wrap: break-word;
+            font-weight: 300;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                margin: 0 auto;
+                width: calc(100% + 40px);
+				max-width: 1024px;
+            }
+
+			.column {
+				float: left;
+				width: calc(50% - 40px);
+				margin-right: 40px;
+			}
+        }
+	</style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{projectName}}</h1>
+        <div class="column">
+			<h2>Template Pages</h2>
+			<ul>
+				{{#each templateListing}}
+				<li>
+					<a class="page-link" href="{{this.url}}">
+						<div class="page-name">{{this.name}}</div>
+						<div class="page-url">{{this.path}}</div>
+					</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+		<div class="column">
+			<h2>Reference Pages</h2>
+			<ul>
+				{{#each referencePageListing}}
+				<li>
+					<a class="page-link" href="{{this.url}}">
+						<div class="page-name">{{this.name}}</div>
+						<div class="page-url">{{this.path}}</div>
+					</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+    </div>
+</body>
+</html>

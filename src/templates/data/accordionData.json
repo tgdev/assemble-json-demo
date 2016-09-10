@@ -1,0 +1,18 @@
+[
+  {
+    "accordionHeading": "Accordion Heading One (Click me!)",
+    "accordionContent": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+  },
+  {
+    "accordionHeading": "Accordion Heading Two",
+    "accordionContent": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>"
+  },
+  {
+    "accordionHeading": "Titles are always H4s",
+    "accordionContent": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+  },
+  {
+    "accordionHeading": "But content is rendered as a HTML chunk",
+    "accordionContent": "<h3>Satis est tibi in te, satis in legibus, satis in mediocribus amicitiis praesidii.</h3><p>A mene tu? Nam aliquando posse recte fieri dicunt nulla expectata nec quaesita voluptate.</p><p><a href=\"#\" target=\"_blank\">Restatis igitur vos;</a> Nihil enim hoc differt. Negat enim summo bono afferre incrementum diem. Videsne quam sit magna dissensio? Ego vero volo in virtute vim esse quam maximam; Deinde prima illa, quae in congressu solemus Quid tu, inquit, huc? </p><h2>Nec enim, dum metuit, iustus est, et certe, si metuere destiterit, non erit;</h2><p>Invidiosum nomen est, infame, suspectum. Recte dicis; Et ais, si una littera commota sit, fore tota ut labet disciplina. Ut proverbia non nulla veriora sint quam vestra dogmata. Eorum enim est haec querela, qui sibi cari sunt seseque diligunt. Mihi enim satis est, ipsis non satis. Quam tu ponis in verbis, ego positam in re putabam.</p><ol><li>Itaque his sapiens semper vacabit.</li><li>De malis autem et bonis ab iis animalibus, quae nondum depravata sint, ait optime iudicari.</li></ol>"
+  }
+]

@@ -1,0 +1,89 @@
+---
+layout: master
+htmlBlock: <%= htmlData %>
+blogPosts: <%= blogData %>
+newsListing: <%= newsData %>
+contentTiles: <%= contentTilesData %>
+---
+
+{{log .}}
+
+<section class="section">
+    <div class="container-fluid">
+        <h2>Section Examples</h2>
+        <p>Anything on this page should be able to exist on any other page with no modifications (see Homepage)</p>
+    </div>
+</section>
+
+{{> section-base-section
+    heading = "Base Section"
+    innerComponent=(renderInnerPartial 'component-html-block'
+        content = htmlBlock
+    )
+    btnText = "With Optional Button"
+}}
+
+{{> section-half-half
+    heading = "50/50 Section"
+    leftColComponent=(renderInnerPartial 'component-latest-news'
+        heading = "Latest Blog"
+        itemList = blogPosts
+        readMoreText = "More Blog Articles"
+    )
+
+    rightColComponent=(renderInnerPartial 'component-latest-news'
+        heading = "Latest News"
+        itemList = newsListing
+        readMoreText = "More News"
+    )
+}}
+
+{{> section-half-half
+    heading = "50/50 Section with different components"
+    leftColComponent=(renderInnerPartial 'component-html-block'
+        content = htmlBlock
+    )
+
+    rightColComponent = "<img src=\"http://placehold.it/600x300\" alt=\"\" />"
+}}
+
+{{> section-more-less
+    heading = "75/25 Section with same components, different data"
+    leftColComponent=(renderInnerPartial 'component-latest-news'
+        heading = "Latest Blog"
+        itemList = blogPosts
+        readMoreText = "More Blog Articles"
+    )
+
+    rightColComponent=(renderInnerPartial 'component-latest-news'
+        heading = "Latest News"
+        itemList = newsListing
+        readMoreText = "More News"
+    )
+}}
+
+{{> section-more-less
+    heading = "Reversed 75/25 Section with different components"
+    leftColComponent=(renderInnerPartial 'component-latest-news'
+        heading = "Latest Blog"
+        itemList = blogPosts
+        readMoreText = "More Blog Articles"
+    )
+
+    rightColComponent = "<h3>Twitter widget.</h3><p>Look at all the tweets!</p>"
+    modifier = "reverse"
+}}
+
+{{> section-tile-holder
+    theme = "bg-primary"
+    heading = "Tile Holder with tile component and data."
+    component = "component-standard-tile"
+    tileItem = contentTiles
+}}
+
+{{> section-tile-holder
+    theme = "bg-light-grey-1"
+    heading = "Tile Holder with news component and blog data"
+    component = "component-standard-news"
+    tileItem = blogPosts
+}}

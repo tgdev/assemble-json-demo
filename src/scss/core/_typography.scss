@@ -1,0 +1,16 @@
+// Type styles
+html {
+  font-size: #{$baseline}px;
+}
+
+body {
+  font-family: $base-font-family;
+  @include font-size($base-font-size);
+  @include line-height($base-line-height);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@import './type/headings';
+@import './type/text';
+@import './type/lists';

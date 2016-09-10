@@ -1,0 +1,58 @@
+// HEADER Styles
+// -----------------------------------------------------------------------------
+.header {
+  position: relative;
+  border-bottom: 1px solid $color-light-grey-1;
+  background-color: $color-white;
+  padding: $screen-padding/2 $screen-padding;
+  margin-bottom: $screen-padding * 1.5;
+
+  .logo {
+    margin: 0;
+    text-decoration: none;
+
+    img {
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+
+  .brand-name {
+    position: relative;
+    top: 5px;
+    color: $color-black;
+    @include font-size(20);
+  }
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Header mods
+.header--contained {
+  .header__container {
+    @include container-fluid();
+  }
+}
+
+// @media (min-width: $screen-sm) {
+// 	.header {
+//         padding: $base-component-tablet-padding;
+// 	}
+// }
+
+@media (min-width: $screen-md) {
+  .header {
+    padding: $screen-padding;
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .header--contained {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

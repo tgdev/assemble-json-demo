@@ -1,0 +1,22 @@
+<section class="section half-half {{theme}}">
+	<div class="container-fluid">
+        {{#if heading }}
+        <div class="section-heading">
+            <h2>{{{ heading }}}</h2>
+        </div>
+        {{/if}}
+        <div class="row">
+            <div class="left-col">
+                {{{ leftColComponent }}}
+            </div>
+            <div class="right-col">
+                {{{ rightColComponent }}}
+            </div>
+        </div>
+        {{#if btnText }}
+        <div class="section-readmore">
+            <a href="#" class="btn">{{{ btnText }}}</a>
+        </div>
+        {{/if}}
+	</div>
+</section>

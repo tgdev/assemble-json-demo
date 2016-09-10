@@ -1,0 +1,15 @@
+<section class="section {{theme}}">
+	<div class="container-fluid">
+        {{#if heading }}
+        <div class="section-heading">
+            <h2>{{{ heading }}}</h2>
+        </div>
+        {{/if}}
+        {{{ innerComponent }}}
+        {{#if btnText }}
+        <div class="section-readmore">
+            <a href="#" class="btn">{{{ btnText }}}</a>
+        </div>
+        {{/if}}
+	</div>
+</section>

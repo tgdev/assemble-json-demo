@@ -1,0 +1,23 @@
+// Fonts
+// ======================================================
+
+$font-path: '../fonts';
+
+// Websafe fonts
+$arial: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$times-new-roman: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+$font-open: "Open Sans", sans-serif;
+
+// Custom Webfonts
+// @font-face {
+//   font-family: "Font Name";
+//   src: url("#{$font-path}/filename.eot?#iefix");
+//   src:
+//     url("#{$font-path}/filename.eot?#iefix") format("eot"),
+//     url("#{$font-path}/filename.woff2") format("woff2"),
+//     url("#{$font-path}/filename.woff") format("woff"),
+//     url("#{$font-path}/filename.ttf") format("truetype"),
+//     url("#{$font-path}/filename.svg#FILEID") format("svg");
+//   font-weight: normal;
+//   font-style: normal;
+// }

@@ -1,0 +1,7 @@
+/node_modules
+/dist
+/coverage
+/npm-debug.log
+*.marko.js
+.DS_Store
+/src/icons/optimised

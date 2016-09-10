@@ -1,0 +1,50 @@
+.more-less {
+  .left-col,
+  .right-col {
+    @include col-m(12);
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .more-less {
+    .left-col {
+      @include col-t(8);
+    }
+
+    .right-col {
+      @include col-t(4);
+    }
+
+    &.reverse {
+      .left-col {
+        @include col-t(4);
+      }
+
+      .right-col {
+        @include col-t(8);
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md) {
+  .more-less {
+    .left-col {
+      @include col-dt(8);
+    }
+
+    .right-col {
+      @include col-dt(4);
+    }
+
+    &.reverse {
+      .left-col {
+        @include col-dt(4);
+      }
+
+      .right-col {
+        @include col-dt(8);
+      }
+    }
+  }
+}

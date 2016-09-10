@@ -1,0 +1,119 @@
+.bg-primary {
+  border-color: $color-primary;
+  background-color: $color-primary;
+
+  &,
+  a {
+    color: $color-white;
+  }
+}
+
+.bg-secondary-1 {
+  border-color: $color-secondary-1;
+  background-color: $color-secondary-1;
+
+  &,
+  a {
+    color: $color-black;
+  }
+}
+
+.bg-secondary-2 {
+  border-color: $color-secondary-2;
+  background-color: $color-secondary-2;
+
+  &,
+  a {
+    color: $color-black;
+  }
+}
+
+.bg-secondary-3 {
+  border-color: $color-secondary-3;
+  background-color: $color-secondary-3;
+
+  &,
+  a {
+    color: $color-white;
+  }
+}
+
+.bg-secondary-4 {
+  border-color: $color-secondary-4;
+  background-color: $color-secondary-4;
+
+  &,
+  a {
+    color: $color-white;
+  }
+}
+
+.bg-black {
+  border-color: $color-black;
+  background-color: $color-black;
+
+  &,
+  a {
+    color: $color-white;
+  }
+}
+
+.bg-grey-1 {
+  border-color: $color-grey-1;
+  background-color: $color-grey-1;
+
+  &,
+  a {
+    color: $color-white;
+  }
+}
+
+.bg-grey-2 {
+  border-color: $color-grey-2;
+  background-color: $color-grey-2;
+
+  &,
+  a {
+    color: $color-grey-1;
+  }
+}
+
+.bg-grey-3 {
+  border-color: $color-grey-3;
+  background-color: $color-grey-3;
+
+  &,
+  a {
+    color: $color-grey-1;
+  }
+}
+
+.bg-light-grey-1 {
+  border-color: $color-light-grey-1;
+  background-color: $color-light-grey-1;
+
+  &,
+  a {
+    color: $color-grey-1;
+  }
+}
+
+.bg-light-grey-2 {
+  border-color: $color-light-grey-2;
+  background-color: $color-light-grey-2;
+
+  &,
+  a {
+    color: $color-grey-1;
+  }
+}
+
+.bg-white {
+  border-color: $color-white;
+  background-color: $color-white;
+
+  &,
+  a {
+    color: $color-black;
+  }
+}

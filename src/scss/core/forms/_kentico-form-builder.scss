@@ -1,0 +1,309 @@
+@import 'datepicker';
+
+// KENTICO FORM BUILDER
+// Default styles for the Kentico Web Form Builder
+//----------------------------------------
+.kentico-form-builder {
+  .EditingFormTable {
+    width: 100%;
+
+    tr {
+      display: block;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .EditingFormValueCell {
+      display: block;
+      overflow: hidden;
+    }
+
+    .EditingFormControlNestedControl {
+      overflow: hidden;
+    }
+
+    //Labels
+    .FieldLabel {
+      display: block;
+      overflow: hidden;
+
+      span { //because Kentico loves spans for labels
+        display: inline-block;
+        margin-bottom: $input-height / 2;
+        color: $color-grey-1;
+        @include font-size(16);
+      }
+    }
+
+    //Errors
+    .EditingFormValueCell {
+      .Error {
+        input[type="text"],
+        textarea {
+          border-color: $color-secondary-4;
+        }
+      }
+
+      .EditingFormErrorLabel {
+        clear: both;
+        display: block;
+        color: $color-secondary-4;
+        margin-top: 10px;
+        @include font-size(14);
+      }
+    }
+  }
+
+  .ErrorLabel {
+    display: block;
+    width: 100%;
+    border: 1px solid $color-secondary-4;
+    color: $color-secondary-4;
+    height: $input-height;
+    line-height: $input-height;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  //Checkbox and Radio buttons
+  .checkbox,
+  .radio {
+    float: left;
+    position: relative;
+
+    br {
+      display: none;
+    }
+  }
+
+  //File Chosen  Upload
+  .uploader-upload {
+    input[type="file"] {
+      display: none;
+    }
+
+    label {
+      display: block !important;
+      position: relative;
+      height: $button-height;
+      line-height: -2 + $button-height;
+      padding: 0 25px;
+      font-family: $font-open;
+      font-weight: 400;
+      text-transform: uppercase;
+      border-radius: none;
+      transition: all 0.1s ease-in-out;
+      background-color: transparent;
+      border: 1px solid $color-primary;
+      color: $color-primary;
+      width: 155px;
+      text-align: center;
+      @include font-size(14);
+      float: left;
+      margin-bottom: 0;
+
+      &:hover,
+      &.on {
+        background: $color-primary;
+        color: $color-white;
+        text-decoration: none;
+
+        span {
+          transition: all 0.1s ease-in-out;
+          color: $color-white;
+        }
+      }
+    }
+
+    span {
+      margin-left: 10px;
+      line-height: -2 + $button-height;
+    }
+  }
+
+  input[type="submit"] {
+    @include font-size(14);
+  }
+
+  //List Box Options
+  //Kentico is crazy annoying and doesn't distinguish between list options and regular selects
+  //except for an ID which is unique everytime. Thus 5 hardcoded values.
+  //If you need more than 6 listboxes in one form, maybe re-think your decisions to that point.
+  #ListBoxControl,
+  #ListBoxControl_1,
+  #ListBoxControl_2,
+  #ListBoxControl_3,
+  #ListBoxControl_4,
+  #ListBoxControl_5 {
+    select {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      height: 110px;
+    }
+  }
+
+  //Secuirty Form
+  //See List Box above for why we have to hardcode 6 options.
+  #SecurityCode,
+  #SecurityCode_1,
+  #SecurityCode_2,
+  #SecurityCode_3,
+  #SecurityCode_4,
+  #SecurityCode_5 {
+    .FieldLabel {
+      display: none;
+    }
+  }
+
+  //Submit buttons should always be on the right
+  .EditingFormButtonCell {
+    float: right;
+  }
+
+
+  // TOP LEVEL DATE PICKER OVERRIDES
+  //----------------------------------------
+  .date-time-picker {
+    .CalendarTextBox {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      margin-right: 15px;
+    }
+  }
+
+  .datetime-ui-widget-content,
+  .datetime-ui-widget-header {
+    border: none;
+    background: $color-white;
+  }
+
+  .datetime-ui-datepicker {
+    padding: 5px;
+    border: 1px solid $color-primary;
+    border-radius: 2px;
+
+    // CONTAINER ABOVE CALENDER DAYS
+    //------------------------------
+    .datetime-ui-datepicker-title {
+      display: flex;
+      margin: 0;
+    }
+
+    // Buttons to the either side of month/year selects
+    .datetime-ui-datepicker-prev,
+    .datetime-ui-datepicker-next {
+      display: block;
+      position: relative;
+      height: 40px;
+      min-width: 40px;
+      top: 0;
+      margin: 0;
+    }
+
+    // Remove margins on inputs
+    select.datetime-ui-datepicker-month,
+    select.datetime-ui-datepicker-year {
+      margin-top: 0;
+      margin-bottom: 0;
+      @include font-size(14);
+    }
+
+    select.datetime-ui-datepicker-month {
+      margin-right: 5px;
+    }
+
+    // Reset the order of the elements in the top bar
+    select.datetime-ui-datepicker-month { order: 2; }
+    select.datetime-ui-datepicker-year { order: 3; }
+    .datetime-ui-datepicker-prev { order: 1; }
+    .datetime-ui-datepicker-next { order: 4; }
+
+    // DATES
+    //------
+
+    // Reset Dates
+    .datetime-ui-state-default,
+    .datetime-ui-widget-content .datetime-ui-state-default,
+    .datetime-ui-widget-header .datetime-ui-state-default,
+    .datetime-ui-state-active,
+    .datetime-ui-widget-content .datetime-ui-state-active,
+    .datetime-ui-widget-header .datetime-ui-state-active {
+      border: none;
+      color: black;
+      font-weight: normal;
+      margin-bottom: 0;
+    }
+
+    // Reset months
+    .datetime-ui-datepicker-calendar tbody tr:nth-child(odd) {
+      background: transparent;
+    }
+
+    // Currently selected date
+    .datetime-ui-state-active,
+    .datetime-ui-widget-content .datetime-ui-state-active,
+    .datetime-ui-widget-header .datetime-ui-state-active {
+      background: $color-primary;
+      color: $color-white;
+    }
+
+    // Greyed out dates from other months
+    .datetime-ui-priority-secondary,
+    .datetime-ui-widget-content .datetime-ui-priority-secondary,
+    .datetime-ui-widget-header .datetime-ui-priority-secondary {
+      opacity: 0.5;
+    }
+
+    .datetime-ui-state-default,
+    .datetime-ui-widget-content .datetime-ui-state-default,
+    .datetime-ui-widget-header .datetime-ui-state-default {
+      &:hover {
+        color: $color-white;
+        background: lighten($color-primary, 10%);
+      }
+    }
+
+    // DATEPICKER INPUTS
+    //------------------
+    input,
+    textarea,
+    button {
+      float: left;
+      padding: 5px;
+      margin-right: 5px;
+      min-width: 100px;
+      background-color: $color-white;
+      border: 1px solid $color-primary;
+      text-transform: none;
+      border-radius: 2px;
+      @include font-size(14);
+      @include line-height(16);
+
+      &:hover {
+        color: $color-white;
+        background-color: $color-primary;
+      }
+    }
+
+    button {
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .date-time-picker {
+    .CalendarTextBox {
+      margin-bottom: 0;
+      width: 150px;
+      float: left;
+      margin-right: 20px;
+    }
+
+    .btn {
+      margin-right: 15px;
+    }
+  }
+}

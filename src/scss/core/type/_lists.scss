@@ -1,0 +1,53 @@
+// LIST STYLES
+//----------------------------------------
+.wysiwyg {
+  ul,
+  ol {
+    margin-top: 10px;
+    margin-bottom: $base-margin-bottom;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+
+  ol {
+    padding-left: 30px;
+
+    li {
+      position: relative;
+      counter-increment: step-counter;
+
+      &::before {
+        content: counter(step-counter) ".";
+        color: $color-primary;
+        position: absolute;
+        left: -30px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  ul {
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        content: '';
+        display: block;
+        width: 7px;
+        height: 7px;
+        border-radius: 100%;
+        background-color: $color-primary;
+      }
+
+      ul {
+        margin-top: 5px;
+      }
+    }
+  }
+}

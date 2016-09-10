@@ -1,0 +1,28 @@
+.component-social {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-left: 10px;
+    padding: 9px 12px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+  span {
+    display: none;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .component-social {
+    span {
+      display: inline-block;
+      line-height: 44px;
+      margin-right: $screen-padding;
+    }
+  }
+}

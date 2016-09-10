@@ -1,0 +1,33 @@
+.header__menu {
+  background-color: $color-white;
+  display: none;
+
+  li {
+    display: block;
+  }
+
+  &.is-open {
+    display: block;
+  }
+}
+
+// @media (min-width: $screen-sm) {
+//     .header__menu { }
+// }
+
+@media (min-width: $screen-md) {
+  .header__menu {
+    display: block;
+    text-align: right;
+
+    li {
+      display: inline-block;
+      margin-left: 30px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,248 @@
+/*
+*
+* JCVD Grid System
+* Custom grid system implementation, based on http://flexboxgrid.com/
+*
+*/
+$container-max-width: 1200px;
+$m-container-padding: 20px;
+$t-container-padding: 25px;
+$dt-container-padding: 30px;
+
+$m-columns: 12;
+$t-columns: 12;
+$dt-columns: 12;
+
+$m-gutter-width: 20px;
+$t-gutter-width: 25px;
+$dt-gutter-width: 30px;
+
+/*
+*
+* CONTAINER STYLES
+*
+*/
+@mixin container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: calc(#{$container-max-width} + (#{$m-container-padding} * 2));
+
+  @media (min-width: $screen-sm) {
+    max-width: calc(#{$container-max-width} + (#{$t-container-padding} * 2));
+  }
+
+  @media (min-width: $screen-md) {
+    max-width: calc(#{$container-max-width} + (#{$dt-container-padding} * 2));
+  }
+}
+
+.container-fluid {
+  @include container-fluid;
+}
+
+/*
+*
+* ROW STYLES
+*
+*/
+@mixin row {
+  //IMPORTANT! Make sure the row is always 100% of the container, plus the
+  //breakpoint gutter width. That way every column is consistent and has a
+  //margin-right
+  width: calc(100% + #{$m-gutter-width});
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.row {
+  @include row();
+}
+
+@media (min-width: $screen-sm) {
+  .row {
+    width: calc(100% + #{$t-gutter-width});
+  }
+}
+
+@media (min-width: $screen-md) {
+  .row {
+    width: calc(100% + #{$dt-gutter-width});
+  }
+}
+
+/*
+*
+* COLUMN STYLES
+*
+*/
+*[class*="col-"] {
+  flex: 0 0 auto;
+}
+
+@mixin base-column($i, $columns, $gutter-width) {
+  flex-basis: calc((100% / #{$columns} * #{$i}) - #{$gutter-width});
+  max-width: calc((100% / #{$columns} * #{$i}) - #{$gutter-width});
+  margin-right: $gutter-width;
+}
+
+// Column mixins to be used for CSS only grid layouts.
+@mixin col-m($i) {
+  @include base-column($i, $m-columns, $m-gutter-width);
+}
+
+@mixin col-t($i) {
+  @include base-column($i, $t-columns, $t-gutter-width);
+}
+
+@mixin col-dt($i) {
+  @include base-column($i, $dt-columns, $dt-gutter-width);
+}
+
+@mixin base-offset($i, $breakpoint, $columns, $gutter-width, $reverse: false) {
+  @media ($breakpoint) {
+    @if $reverse == true {
+      margin-left: initial;
+      margin-right: calc((100% / #{$columns} * #{$i}));
+    }
+    @else {
+      margin-left: calc((100% / #{$columns} * #{$i}));
+    }
+  }
+}
+
+@mixin col-m-offset($i, $reverse: false) {
+  @include base-offset($i, 'max-width: $screen-sm - 1px', $m-columns, $m-gutter-width, $reverse);
+}
+
+@mixin col-t-offset($i, $reverse: false) {
+  @include base-offset($i, 'min-width: $screen-sm', $t-columns, $t-gutter-width, $reverse);
+}
+
+@mixin col-dt-offset($i, $reverse: false) {
+  @include base-offset($i, 'min-width: $screen-md', $dt-columns, $dt-gutter-width, $reverse);
+}
+
+//Mobile COLUMN classes for use in HTML
+@for $i from 1 through $m-columns {
+  .col-m-#{$i} {
+    @include col-m(#{$i});
+  }
+}
+
+// Mobile COL OFFSET classes for use in the HTML
+// Wrapped in a media query so they only work on mobile viewports
+@media (max-width: ($screen-sm - 1px)) {
+  @for $i from 1 through $m-columns {
+    .col-m-offset-#{$i} {
+      @include col-m-offset($i);
+    }
+  }
+
+  .row.reverse {
+    @for $i from 1 through $m-columns {
+      .col-m-offset-#{$i} {
+        @include col-m-offset($i, true);
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm) {
+  @for $i from 1 through $t-columns {
+    .col-t-#{$i} {
+      @include col-t(#{$i});
+    }
+  }
+}
+
+// Tablet COL OFFSET classes for use in the HTML
+// Wrapped in a media query so they only work on tablet viewports
+@media (min-width: $screen-sm) and (max-width: ($screen-md - 1px)) {
+  @for $i from 1 through $m-columns {
+    .col-t-offset-#{$i} {
+      @include col-t-offset($i);
+    }
+  }
+
+  .row.reverse {
+    @for $i from 1 through $t-columns {
+      .col-t-offset-#{$i} {
+        @include col-t-offset($i, true);
+      }
+    }
+  }
+}
+
+
+@media (min-width: $screen-md) {
+  @for $i from 1 through $dt-columns {
+    .col-dt-#{$i} {
+      @include col-dt(#{$i});
+    }
+
+    .col-dt-offset-#{$i} {
+      @include col-dt-offset($i);
+    }
+  }
+
+  .row.reverse {
+    @for $i from 1 through $dt-columns {
+      .col-dt-offset-#{$i} {
+        @include col-dt-offset($i, true);
+      }
+    }
+  }
+}
+
+/*
+*
+* DEBUG STYLES
+* Pretty colours so you can figure out what's breaking.
+*
+*/
+.debug {
+  background: rgba(green, 0.3);
+
+  .row {
+    background: rgba(red, 0.3);
+
+    & > div {
+      position: relative;
+      background: rgba(blue, 0.3);
+
+      &::after {
+        width: $m-gutter-width;
+        right: -$m-gutter-width;
+        content: '';
+        height: 100%;
+        display: block;
+        position: absolute;
+        background: rgba(yellow, 0.3);
+        top: 0;
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .debug .row > div::after {
+    display: block;
+    width: $t-gutter-width;
+    right: -$t-gutter-width;
+  }
+}
+
+@media (min-width: $screen-md) {
+  .debug .row > div::after {
+    display: block;
+    width: $dt-gutter-width;
+    right: -$dt-gutter-width;
+  }
+}

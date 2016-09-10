@@ -1,0 +1,38 @@
+.tile-holder {
+  background-color: $color-light-grey-2;
+
+  & > div > h2 {
+    text-align: center;
+  }
+
+  .tile-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    & > div {
+      @include col-m(12);
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .tile-holder {
+    .tile-wrapper {
+      & > div {
+        @include col-t(3);
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md) {
+  .tile-holder {
+    .tile-wrapper {
+      .tile {
+        @include col-dt(3);
+      }
+    }
+  }
+}
