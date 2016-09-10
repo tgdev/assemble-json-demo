@@ -1,14 +1,12 @@
 <div class="tile standard">
-    {{#hasData data.imgUrl imgUrl}}
-      <img src="{{#if data}}{{{ data.imgUrl }}}{{else}}{{{imgUrl}}}{{/if}}" alt="">
-    {{/hasData}}
+    <img src="{{#if data}}{{{ data.imgUrl }}}{{else}}{{{imgUrl}}}{{/if}}" alt="">
     <div class="content">
-        <h4>{{#if data}}{{ data.title }}{{else}}{{title}}{{/if}}</h4>
-        {{#hasData data.blurb blurb}}
+
+        <h3>{{#if data}}{{ data.title }}{{else}}{{title}}{{/if}}</h3>
+
         <p>{{#if data}}{{ data.blurb }}{{else}}{{blurb}}{{/if}}</p>
-        {{/hasData}}
-        {{#hasData data.btnText btnText}}
+
         <a href="#" class="btn">{{#if data}}{{ data.btnText }}{{else}}{{btnText}}{{/if}}</a>
-        {{/hasData}}
+
     </div>
 </div>

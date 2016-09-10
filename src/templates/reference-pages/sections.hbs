@@ -23,13 +23,13 @@ contentTiles: <%= contentTilesData %>
 
 {{> section-half-half
     heading = "50/50 Section"
-    leftColComponent=(renderInnerPartial 'component-latest-news'
+    leftColComponent=(renderInnerPartial 'component-content-listing'
         heading = "Latest Blog"
         itemList = blogPosts
         readMoreText = "More Blog Articles"
     )
 
-    rightColComponent=(renderInnerPartial 'component-latest-news'
+    rightColComponent=(renderInnerPartial 'component-content-listing'
         heading = "Latest News"
         itemList = newsListing
         readMoreText = "More News"
@@ -47,13 +47,13 @@ contentTiles: <%= contentTilesData %>
 
 {{> section-more-less
     heading = "75/25 Section with same components, different data"
-    leftColComponent=(renderInnerPartial 'component-latest-news'
+    leftColComponent=(renderInnerPartial 'component-content-listing'
         heading = "Latest Blog"
         itemList = blogPosts
         readMoreText = "More Blog Articles"
     )
 
-    rightColComponent=(renderInnerPartial 'component-latest-news'
+    rightColComponent=(renderInnerPartial 'component-content-listing'
         heading = "Latest News"
         itemList = newsListing
         readMoreText = "More News"
@@ -62,7 +62,7 @@ contentTiles: <%= contentTilesData %>
 
 {{> section-more-less
     heading = "Reversed 75/25 Section with different components"
-    leftColComponent=(renderInnerPartial 'component-latest-news'
+    leftColComponent=(renderInnerPartial 'component-content-listing'
         heading = "Latest Blog"
         itemList = blogPosts
         readMoreText = "More Blog Articles"

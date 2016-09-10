@@ -1,9 +1,23 @@
-// .html-block {
-
-// }
-
-// @media (min-width: $screen-md) {
-//   .html-block {
+// .component-html-block {
 //
-//   }
 // }
+
+@media (min-width: $screen-md) {
+  .component-html-block {
+    .align-left,
+    .align-right {
+      width: auto;
+      max-width: 50%;
+    }
+
+    .align-left {
+      float: left;
+      margin: 0 15px 15px 0;
+    }
+
+    .align-right {
+      float: right;
+      margin: 0 0 15px 15px;
+    }
+  }
+}
